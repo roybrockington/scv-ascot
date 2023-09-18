@@ -2,10 +2,20 @@
   export let price;
 </script>
 
-<div class="my-2 flex flex-col bg-zinc-200 w-full md:w-3/4 lg:w-1/2 items-center gap-3 rounded-xl py-4 text-center">
-  <span class="text-md font-bold">{price.description}</span>
-  <span class={`${price.ascot ? 'line-through text-lg': 'text-3xl'}`}>£{price.ssp.toFixed(2)}</span>
-  <span class={`${price.ascot ? 'text-3xl': 'hidden'}`}>
-    £{price.ascot}
+<div class="my-2 flex flex-col bg-zinc-200 w-full md:w-3/4 lg:w-1/2 gap-3 rounded-xl py-4 px-6 border border-zinc-400">
+  <span class="text-md font-bold">
+    {price.description.split(" - ")[0]}
   </span>
+  <span class={price.description.split(" - ")[1] ? "text-sm" : "hidden"}>
+    {price.description.split(" - ")[1]}
+  </span>
+  <span class={`${price.ascot ? 'line-through text-red-500 text-lg': 'text-3xl'}`}>
+    £{price.ssp.toFixed(2)}
+  </span>
+  <div class={`${price.ascot ? 'text-3xl': 'hidden'}`}>
+    {price.ascot && (
+      `£${price.ascot.toFixed(2)}`
+    )}
+    <span class="float-right px-3 py-2 bg-orange-400 text-xs text-bold rounded">Show Deal!</span>
+  </div>
 </div>

@@ -1,13 +1,24 @@
-<script>
+<script lang="ts">
   import prices from '../prices.json'
   import { createSearchStore, searchHandler } from '$lib/stores/search'
   import {onDestroy } from 'svelte'
+  import type { PageData } from './$types'
   import Product from '../components/Product.svelte'
 
-  const searchProducts = prices.map((product) => ({
+  type Product = {
+    title: string
+    description: string
+    ssp: number
+    ascot: number
+    category: string
+    searchTerms: string
+  }
+
+  const searchProducts: Product[] = prices.map((product: Product) => ({
     ...product,
     searchTerms: `${product.description} ${product.sku} ${product.category}`
   }))
+
 
   const searchStore = createSearchStore(searchProducts)
   const unsubscribe = searchStore.subscribe((model) => searchHandler(model))
@@ -21,9 +32,14 @@
   <h1 class="text-3xl my-5 font-bold text-center">
     Hello Ascot!
   </h1>
-  <input type="search" placeholder="search products..." class="w-1/2" bind:value={$searchStore.search} />
+  <input
+    type="search"
+    placeholder="Search products..."
+    class="w-1/2 mx-4 p-2 rounded-xl border-zinc-400"
+    bind:value={$searchStore.search}
+  />
 </div>
-<div class="flex flex-col w-full items-center px-3">
+<div class="flex flex-col w-full items-center px-3 mt-4">
   {#each $searchStore.filtered as price}
     <Product {price} />
   {/each}
