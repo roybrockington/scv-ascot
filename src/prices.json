@@ -14,20 +14,6 @@
    "ascot": null
  },
  {
-   "sku": "BM-AHB2RM/B",
-   "description": "Benchmark AHB2 high res amplifier rackmounted - black",
-   "category": "Power Amps",
-   "ssp": 3849,
-   "ascot": null
- },
- {
-   "sku": "BM-AHB2RM/S",
-   "description": "Benchmark AHB2 high res amplifier rackmounted - silver",
-   "category": "Power Amps",
-   "ssp": 3849,
-   "ascot": null
- },
- {
    "sku": "BM-DAC3B/B",
    "description": "Benchmark DAC3B Converter - black  (no remote)",
    "category": "DACs",
