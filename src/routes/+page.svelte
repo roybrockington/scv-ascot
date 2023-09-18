@@ -4,7 +4,7 @@
   import { onDestroy } from 'svelte'
   import type { PageData } from './$types'
   import Product from '../components/Product.svelte'
-//  import Logo from '../components/Logo.svelte'
+  import Logo from '../components/Logo.svelte'
 
   type Product = {
     title: string
@@ -39,7 +39,7 @@
 >
 
   <h1 class="text-3xl my-5 font-bold text-center">
-    Hello Ascot!
+    <Logo />
   </h1>
   <input
     type="search"
