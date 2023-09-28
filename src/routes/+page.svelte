@@ -4,7 +4,7 @@
   import { onDestroy } from 'svelte'
   import type { PageData } from './$types'
   import Product from '../components/Product.svelte'
-  import Logo from '../components/Logo.svelte'
+  import Logo from '../scvgrand.png'
 
   type Product = {
     title: string
@@ -36,19 +36,17 @@
   items-center
   back-drop
   min-h-screen
+  bg-fixed
   "
 >
-
-  <h1 class="text-3xl my-5 font-bold text-center">
-    <Logo />
-  </h1>
+  <img src={Logo} class="w-1/4 my-3" alt="SCV Grand National" />
+  <div class="flex flex-col w-full items-center px-3">
   <input
     type="search"
     placeholder="Search products..."
-    class="w-1/2 mx-4 p-2 rounded-xl border-zinc-400"
+    class="w-full md:w-1/2 p-2 border-zinc-400 focus:outline-none flex items-center justify-center mb-4 rounded"
     bind:value={$searchStore.search}
   />
-  <div class="flex flex-col w-full items-center px-3 mt-4">
     {#each $searchStore.filtered as price}
       <Product {price} />
     {/each}
