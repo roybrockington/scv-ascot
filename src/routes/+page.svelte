@@ -35,6 +35,7 @@
   w-full
   items-center
   back-drop
+  min-h-screen
   "
 >
 
