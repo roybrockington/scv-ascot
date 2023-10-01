@@ -43,6 +43,7 @@
   <div class="flex flex-col w-full items-center px-3">
   <input
     type="search"
+    autocomplete="off"
     placeholder="Search products..."
     class="w-full md:w-1/2 p-2 border-zinc-400 focus:outline-none flex mb-4"
     bind:value={$searchStore.search}
