@@ -44,7 +44,7 @@
   <input
     type="search"
     placeholder="Search products..."
-    class="w-full md:w-1/2 p-2 border-zinc-400 focus:outline-none flex items-center justify-center mb-4 rounded"
+    class="w-full md:w-1/2 p-2 border-zinc-400 focus:outline-none flex mb-4"
     bind:value={$searchStore.search}
   />
     {#each $searchStore.filtered as price}
